@@ -33,8 +33,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "835d1f17-9bd9-413a-882d-f2a420e1aaf1",
             "zIndex": -1,
+            "id": "835d1f17-9bd9-413a-882d-f2a420e1aaf1",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Internet Trust Boundary",
@@ -65,8 +65,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "c61b2fcf-3dc4-4dac-92f2-1992d189a723",
             "zIndex": -1,
+            "id": "c61b2fcf-3dc4-4dac-92f2-1992d189a723",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Internet Trust Boundary",
@@ -97,8 +97,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "3ed8e9e5-73ee-4080-903c-1c34a53b8d81",
             "zIndex": -1,
+            "id": "3ed8e9e5-73ee-4080-903c-1c34a53b8d81",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "CorpNet Trust Boundary",
@@ -388,8 +388,8 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "See OWASP Automated Threat #6:\nUsing speed to violate explicit or implicit assumptions about the application’s normal use to achieve unfair individual gain",
-                  "mitigation": "Defences include providing enforcement of behavioral workflow and anti-automation",
+                  "description": "See OWASP Automated Threat #6:\nUsing speed to violate explicit or implicit assumptions about the application’s normal use to achieve unfair individual gain\n\nPersonal explanation: This is Medium severity because it is accessible to the user through the account login form, creating a public facing attack surface.",
+                  "mitigation": "Defences include providing enforcement of behavioural workflow and anti-automation. \n\nPersonal explanation:  The above can work because it can prevent external threats from misusing the public facing service from being attacked with speed.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 24,
@@ -401,8 +401,8 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "See OWASP Automated Threat #14:\nSystematic enumeration and examination in order to find weaknesses and points where a security vulnerability might exist",
-                  "mitigation": "Defence includes providing anti-automation",
+                  "description": "See OWASP Automated Threat #14:\nSystematic enumeration and examination in order to find weaknesses and points where a security vulnerability might exist\n\nPersonal explanation: as it is connected to account authentication, the public facing part can be considered an attack surface, hence medium severity.",
+                  "mitigation": "Defence includes providing anti-automation\n\nPersonal explanation: It is possible to build anti-automation to prevent threat actors from using automation to enumerate and examine weaknesses.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 25,
@@ -412,10 +412,10 @@
                   "id": "381fcd6a-a425-40c2-a3cc-dded421671db",
                   "title": "Denial of Service",
                   "status": "Open",
-                  "severity": "Low",
+                  "severity": "High",
                   "type": "Elevation of privilege",
-                  "description": "See OWASP Automated Threat #15:\nUsage may resemble legitimate application usage but leads to exhaustion of resources",
-                  "mitigation": "Mitigation or prevention such as providing backoff, resource management and avoiding forced deadlock",
+                  "description": "See OWASP Automated Threat #15:\nUsage may resemble legitimate application usage but leads to exhaustion of resources\n\nPersonal explanation: Denial of Service attack is very common and can be used on a surface that is public facing like the Web service hence the high severity.",
+                  "mitigation": "Mitigation or prevention such as providing backoff, resource management and avoiding forced deadlock\n\nPersonal explanation: having multiple backoff options reduce the risk of a successful DOS Attack.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 26,
@@ -437,19 +437,12 @@
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 1,
+                "tampering": 4,
                 "repudiation": 0,
-                "informationDisclosure": 2,
+                "informationDisclosure": 3,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 1
+                "elevationOfPrivilege": 2
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -854,7 +847,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Elevation of privilege",
-                  "description": "See OWASP Automated Threat #16:\nAutomated repeated clicking or requesting or submitting content, affecting application based metrics such as counts, and measures of frequency and/or rate",
+                  "description": "See OWASP Automated Threat #16:\nAutomated repeated clicking or requesting or submitting content, affecting application based metrics such as counts, and measures of frequency and/or rate\n\nPersonal explanation: automated actions by threat actors can create havoc in the database if not properly dealt with, hence medium severity.",
                   "mitigation": "Defences include control of interaction frequency or proper enforcement of a single unique action",
                   "modelType": "STRIDE",
                   "new": false,
@@ -906,7 +899,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "See OWASP Automated Threat #20:\nCompilation of credentials and information from multiple application accounts into another system",
+                  "description": "See OWASP Automated Threat #20:\nCompilation of credentials and information from multiple application accounts into another system\n\nPersonal explanation: as a database might contain the login credentials, it is likely threat actors will be looking for this information, hence medium severity.",
                   "mitigation": "Defences include control of interaction frequency and prevention of abuse of functionality",
                   "modelType": "STRIDE",
                   "new": false,
@@ -933,6 +926,13 @@
                 "informationDisclosure": 4,
                 "denialOfService": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1091,8 +1091,8 @@
             },
             "vertices": [
               {
-                "x": 340,
-                "y": 90
+                "x": 440,
+                "y": 60
               }
             ]
           },
